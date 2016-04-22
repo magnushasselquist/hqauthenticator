@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="authentication">
+    <name>Authentication - HQ Authenticator</name>
+    <author>Magnus Hasselquist</author>
+    <creationDate>2016-04-22</creationDate>
+    <copyright>(C) 2016 Magnus Hasselquist. All rights reserved.</copyright>
+    <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+    <authorEmail>magnus.hasselquist@gmail.com</authorEmail>
+    <authorUrl>https://github.com/magnushasselquist</authorUrl>
+    <version>1.1</version>
+    <description>Authentication - HQ Authenticator</description>
+    <files>
+        <filename plugin="hqauthenticator">hqauthenticator.php</filename>
+    </files>
+    <config>
+      <fields name="params">
+        <fieldset name="basic">
+          <field
+            name="loginUrl"
+            type="text"
+            label="loginUrl"
+            default="https://www.scoutnet.se/login"/>
+          <field
+            name="usernameParameterName"
+            type="text"
+            label="usernameParameterName"
+            default="signin[username]"/>
+          <field
+            name="passwordParameterName"
+            type="text"
+            label="passwordParameterName"
+            default="signin[password]"/>
+          <field
+            name="cookieFile"
+            type="text"
+            label="cookieFile"
+            default="null"
+            description="Local path to file to store cookie in. Needs to be writable by web server user. Enter null if not needed."/>
+        </fieldset>
+      </fields>
+    </config>
+    <updateservers>
+      <server type="extension" priority="2" name="Authentication - HQ Authenticator">http://example.com/extension.xml</server>
+    </updateservers>
+</extension>
