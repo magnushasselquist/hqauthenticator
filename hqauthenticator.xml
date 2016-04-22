@@ -39,7 +39,7 @@
           <field
             name="matchAlso"
             type="text"
-            label="matchNot"
+            label="matchAlso"
             default=""
             description="Any word to also match together with username in a successful login page."/>            
           <field
