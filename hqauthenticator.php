@@ -9,7 +9,7 @@
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die();
 
-function scoutnetAuth($url, $username, $password, $usernameParameterName, $passwordParameterName, $cookieFile)
+function hqAuth($url, $username, $password, $usernameParameterName, $passwordParameterName, $cookieFile)
 {
     $loginFields = $usernameParameterName."=".$username."&".$passwordParameterName."=".$password;
     // error_log($loginFields, 0);   
@@ -44,7 +44,7 @@ function scoutnetAuth($url, $username, $password, $usernameParameterName, $passw
  * @subpackage Plugins
  * @license    GNU/GPL
  */
-class plgAuthenticationhqscoutnetauth extends JPlugin
+class plgAuthenticationhqauthenticator extends JPlugin
 {
     /**
      * This method should handle any authentication and report back to the subject
@@ -89,7 +89,7 @@ class plgAuthenticationhqscoutnetauth extends JPlugin
 	// if($result && ($credentials['username'] == strrev( $credentials['password'] )))
   // if($result && ($credentials['password'] == '1234'))
 
-  if ($result && scoutnetAuth($this->params->get('loginUrl'), $credentials['username'], $credentials['password'], $this->params->get('usernameParameterName'), $this->params->get('passwordParameterName'), $this->params->get('cookieFile')))
+  if ($result && hqAuth($this->params->get('loginUrl'), $credentials['username'], $credentials['password'], $this->params->get('usernameParameterName'), $this->params->get('passwordParameterName'), $this->params->get('cookieFile')))
 	{
 	    $email = JUser::getInstance($result); // Bring this in line with the rest of the system
 	    $response->email = $email->email;
