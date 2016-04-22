@@ -27,7 +27,7 @@ function hqAuth($url, $username, $password, $usernameParameterName, $passwordPar
     // print curl_error($ch); //DEBUG
     curl_close($ch);
     
-    if (strpos($buffer, $username) !== false) and (strpos($buffer, $matchAlso) !== false){
+    if ((strpos($buffer, $username) !== false) && (strpos($buffer, $matchAlso) !== false)) {
     	error_log("HQ Login TRUE", 0);
  	return true; //inloggad;
     } else {
