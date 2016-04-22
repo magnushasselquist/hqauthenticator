@@ -9,7 +9,7 @@
 // Check to ensure this file is included in Joomla!
 defined('_JEXEC') or die();
 
-function hqAuth($url, $username, $password, $usernameParameterName, $passwordParameterName, $cookieFile)
+function hqAuth($url, $username, $password, $usernameParameterName, $passwordParameterName, $cookieFile, $patternBefore, $patternAfter)
 {
     $loginFields = $usernameParameterName."=".$username."&".$passwordParameterName."=".$password;
     // error_log($loginFields, 0);   
@@ -27,7 +27,7 @@ function hqAuth($url, $username, $password, $usernameParameterName, $passwordPar
     // print curl_error($ch); //DEBUG
     curl_close($ch);
     
-    if (strpos($buffer, $username."</span>") !== false) {
+    if (strpos($buffer, $patternBefore.$username.$patternAfter) !== false) {
     	error_log("HQ Login TRUE", 0);
  	return true; //inloggad;
     } else {
@@ -89,7 +89,7 @@ class plgAuthenticationhqauthenticator extends JPlugin
 	// if($result && ($credentials['username'] == strrev( $credentials['password'] )))
   // if($result && ($credentials['password'] == '1234'))
 
-  if ($result && hqAuth($this->params->get('loginUrl'), $credentials['username'], $credentials['password'], $this->params->get('usernameParameterName'), $this->params->get('passwordParameterName'), $this->params->get('cookieFile')))
+  if ($result && hqAuth($this->params->get('loginUrl'), $credentials['username'], $credentials['password'], $this->params->get('usernameParameterName'), $this->params->get('passwordParameterName'), $this->params->get('cookieFile'), $this->params->get('patternBefore'), $this->params->get('patternAfter')))
 	{
 	    $email = JUser::getInstance($result); // Bring this in line with the rest of the system
 	    $response->email = $email->email;
