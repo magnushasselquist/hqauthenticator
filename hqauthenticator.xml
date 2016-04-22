@@ -7,7 +7,7 @@
     <license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
     <authorEmail>magnus.hasselquist@gmail.com</authorEmail>
     <authorUrl>https://github.com/magnushasselquist</authorUrl>
-    <version>1.1</version>
+    <version>1.2</version>
     <description>Authentication - HQ Authenticator</description>
     <files>
         <filename plugin="hqauthenticator">hqauthenticator.php</filename>
