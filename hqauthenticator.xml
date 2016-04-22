@@ -40,6 +40,6 @@
       </fields>
     </config>
     <updateservers>
-      <server type="extension" priority="2" name="Authentication - HQ Authenticator">https://raw.githubusercontent.com/magnushasselquist/hqauthenticator/masters/updates.xml</server>
+      <server type="extension" priority="2" name="Authentication - HQ Authenticator">https://raw.githubusercontent.com/magnushasselquist/hqauthenticator/master/updates.xml</server>
     </updateservers>
 </extension>
