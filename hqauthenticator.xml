@@ -37,17 +37,17 @@
             default="null"
             description="Local path to file to store cookie in. Needs to be writable by web server user. Enter null if not needed."/>
           <field
-            name="patternBefore"
+            name="matchAlso"
             type="text"
-            label="patternBefore"
+            label="matchNot"
             default=""
-            description="Any pattern to match directly before the username in a successful login page."/>            
+            description="Any word to also match together with username in a successful login page."/>            
           <field
-            name="patternAfter"
+            name="matchNot"
             type="text"
-            label="patternAfter"
+            label="matchNot"
             default=""
-            description="Any pattern to match directly after the username in a successful login page."/>                        
+            description="Any word to match in an unsuccessful login page."/>                        
         </fieldset>
       </fields>
     </config>
