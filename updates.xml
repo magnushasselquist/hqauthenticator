@@ -1,3 +1,4 @@
+ <?xml version="1.0" encoding="UTF-8"?>
  <update>
     <name>Authentication - HQ Authenticator</name>
     <description>HQ Authenticator plugin for Joomla. Authenticates with username and password on an external site using forms login.</description>
