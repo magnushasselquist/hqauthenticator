@@ -46,7 +46,7 @@
             name="patternAfter"
             type="text"
             label="patternAfter"
-            default="</span>"
+            default=""
             description="Any pattern to match directly after the username in a successful login page."/>                        
         </fieldset>
       </fields>
