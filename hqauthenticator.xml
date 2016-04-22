@@ -40,13 +40,13 @@
             name="matchAlso"
             type="text"
             label="matchAlso"
-            default=""
+            default="Inloggad"
             description="Any word to also match together with username in a successful login page."/>            
           <field
             name="matchNot"
             type="text"
             label="matchNot"
-            default=""
+            default="Ogiltigt"
             description="Any word to match in an unsuccessful login page."/>                        
         </fieldset>
       </fields>
