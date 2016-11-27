@@ -4,7 +4,7 @@
     <description>HQ Authenticator plugin for Joomla. Authenticates with username and password on an external site using forms login.</description>
     <element>hqauthenticator</element>
     <type>plugin</type>
-    <version>1.3.4</version>
+    <version>1.3.5</version>
     <infourl title="Release notes">http://magnushasselquist.github.io/hqauthenticator/</infourl>
     <downloads>
         <downloadurl type="full" format="zip">https://github.com/magnushasselquist/hqauthenticator/zipball/master</downloadurl>
