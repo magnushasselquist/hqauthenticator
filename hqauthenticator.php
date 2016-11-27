@@ -72,7 +72,8 @@ class plgAuthenticationhqauthenticator extends JPlugin
 	$query	= $db->getQuery(true)
 		->select('id')
 		->from('#__users')
-		->where('username=' . $db->quote($credentials['username']));
+//		->where('username=' . $db->quote($credentials['username']));
+		->where('username=' . $db->quote($credentials['username']) . ' OR email=' . $db->quote($credentials['username']));		
 
 	$db->setQuery($query);
 	$result = $db->loadResult();
