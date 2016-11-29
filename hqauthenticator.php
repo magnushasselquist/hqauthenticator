@@ -73,7 +73,7 @@ class plgAuthenticationhqauthenticator extends JPlugin
 		->select('id')
 		->from('#__users')
 //		->where('username=' . $db->quote($credentials['username']));
-		->where('username=' . $db->quote($credentials['username']) . ' OR email=' . $db->quote($credentials['username']));		
+		->where('username=' . $db->quote($credentials['username']));	
 
 	$db->setQuery($query);
 	$result = $db->loadResult();
@@ -99,7 +99,7 @@ class plgAuthenticationhqauthenticator extends JPlugin
 	else
 	{
 	    $response->status = JAuthentication::STATUS_FAILURE;
-	    $response->error_message = 'HQ: Invalid username and password';
+	    $response->error_message = 'HQ: Invalid username or password';
 	}
     }
 }
