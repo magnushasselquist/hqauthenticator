@@ -72,7 +72,6 @@ class plgAuthenticationhqauthenticator extends JPlugin
 	$query	= $db->getQuery(true)
 		->select('id')
 		->from('#__users')
-//		->where('username=' . $db->quote($credentials['username']));
 		->where('username=' . $db->quote($credentials['username']));	
 
 	$db->setQuery($query);
@@ -92,8 +91,8 @@ class plgAuthenticationhqauthenticator extends JPlugin
 
   if ($result && hqAuth($this->params->get('loginUrl'), $credentials['username'], $credentials['password'], $this->params->get('usernameParameterName'), $this->params->get('passwordParameterName'), $this->params->get('cookieFile'), $this->params->get('matchAlso'), $this->params->get('matchNot')))
 	{
-	    $email = JUser::getInstance($result); // Bring this in line with the rest of the system
-	    $response->email = $email->email;
+	    $joomlaUser = JUser::getInstance($result); // Bring this in line with the rest of the system
+	    $response->username = $joomlaUser->username;
 	    $response->status = JAuthentication::STATUS_SUCCESS;
 	}
 	else
